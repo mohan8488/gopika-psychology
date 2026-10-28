@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{ partial "head.html" . }}
+
+<body>
+
+    {{ if site.Params.demo }}
+    <div class="demo-banner" role="note">
+        Preview site · not yet open for bookings
+    </div>
+    {{ end }}
+
+    {{ partial "navbar.html" . }}
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    {{ partial "mobile-cta.html" . }}
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+
+            <h3>Gopika Govindan</h3>
+
+            <p>
+                Online, evidence-based
+                psychological care.
+            </p>
+
+        </div>
+
+        <nav class="footer-nav">
+
+            <a href="{{ site.Home.RelPermalink }}#about">About</a>
+
+            <a href="{{ site.Home.RelPermalink }}#services">Services</a>
+
+            <a href="{{ site.Home.RelPermalink }}#approach">Approach</a>
+
+            <a href="{{ site.Home.RelPermalink }}#contact">Contact</a>
+
+        </nav>
+
+    </div>
+
+    <div class="container footer-legal">
+
+        {{ partial "licences.html" . }}
+
+        <p>{{ site.Data.site.practice.notice }}</p>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Gopika Govindan.
+        All rights reserved.
+        ·
+        <a href="{{ "impressum/" | relURL }}">Impressum</a>
+
+    </div>
+
+</footer>
+

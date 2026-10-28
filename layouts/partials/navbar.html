@@ -1,0 +1,69 @@
+<header>
+
+    <nav class="navbar container">
+
+        <a href="{{ site.Home.RelPermalink }}" class="logo">
+
+            <span class="logo-mark">◌</span>
+
+            <div>
+
+                <div class="logo-name">
+                    Gopika Govindan
+                </div>
+
+                <div class="logo-title">
+                    {{ site.Data.site.practice.title_short }}
+                </div>
+
+            </div>
+
+        </a>
+
+        <button class="nav-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="nav-links">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+
+            <li><a href="{{ site.Home.RelPermalink }}#about">About</a></li>
+            <li><a href="{{ site.Home.RelPermalink }}#services">Services</a></li>
+            <li><a href="{{ site.Home.RelPermalink }}#approach">Approach</a></li>
+            <li><a href="{{ site.Home.RelPermalink }}#faq">FAQ</a></li>
+            <li><a href="{{ site.Home.RelPermalink }}#contact">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <script>
+        (function () {
+            var toggle = document.querySelector(".nav-toggle");
+            var links = document.getElementById("nav-links");
+
+            function setOpen(open) {
+                links.classList.toggle("open", open);
+                toggle.setAttribute("aria-expanded", open);
+                toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+            }
+
+            toggle.addEventListener("click", function () {
+                setOpen(!links.classList.contains("open"));
+            });
+
+            // Close the menu after choosing a section
+            links.addEventListener("click", function (e) {
+                if (e.target.closest("a")) setOpen(false);
+            });
+        })();
+    </script>
+
+</header>

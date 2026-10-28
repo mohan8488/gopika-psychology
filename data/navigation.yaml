@@ -1,0 +1,19 @@
+menu:
+
+  - name: Home
+    url: "#hero"
+
+  - name: About
+    url: "#about"
+
+  - name: Services
+    url: "#services"
+
+  - name: Approach
+    url: "#approach"
+
+  - name: FAQ
+    url: "#faq"
+
+  - name: Contact
+    url: "#contact"

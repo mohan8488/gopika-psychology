@@ -1,0 +1,83 @@
+<section class="hero">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                {{ site.Data.hero.badge }}
+            </span>
+
+            <h1>
+                {{ site.Data.hero.heading }}
+            </h1>
+
+            <p>
+
+                {{ site.Data.hero.description }}
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="{{ site.Data.site.hero.primary_button.link }}"
+                    class="btn btn-primary">
+                    {{ site.Data.hero.primary_button.text }}
+                </a>
+
+                <a href="{{ site.Data.site.hero.secondary_button.link }}"
+                    class="btn btn-secondary">
+                    {{ site.Data.hero.secondary_button.text }}
+                </a>
+
+            </div>
+
+
+            <div class="hero-features">
+
+                {{ range site.Data.hero.features }}
+                <span>✓ {{ . }}</span>
+                {{ end }}
+
+            </div>
+
+        </div>
+
+        <div class="hero-photo">
+
+            <div class="photo-bg"></div>
+            
+            <div class="photo-frame">
+
+                <img
+                    src="{{ site.Data.hero.image | relURL }}"
+                    alt="Portrait of {{ site.Data.site.site.name }}"
+                    width="1152"
+                    height="1440"
+                    class="hero-image">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <svg class="hero-wave"
+         viewBox="0 0 1440 120"
+         preserveAspectRatio="none"
+         aria-hidden="true"
+         focusable="false">
+
+        <path class="hero-wave-back"
+              d="M0,62 C240,110 470,18 720,46 C980,76 1200,108 1440,52 L1440,120 L0,120 Z"/>
+
+        <path class="hero-wave-front"
+              d="M0,92 C300,44 560,118 860,86 C1100,60 1290,74 1440,98 L1440,120 L0,120 Z"/>
+
+        <path class="hero-wave-line"
+              d="M0,92 C300,44 560,118 860,86 C1100,60 1290,74 1440,98"/>
+
+    </svg>
+
+</section>
+

@@ -1,0 +1,45 @@
+/* General page layout */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+img,
+svg {
+    max-width: 100%;
+}
+
+.container {
+    width: min(1200px, 90%);
+    margin: auto;
+}
+
+section {
+    padding: 100px 0;
+}
+
+@media (max-width: 900px) {
+
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    section {
+        padding: 64px 0;
+    }
+}

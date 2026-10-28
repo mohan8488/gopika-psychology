@@ -1,0 +1,33 @@
+/* Center the featured image */
+.article-header.featured-image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  max-width: none !important; /* remove hard max-width */
+}
+
+/* Center the image inside */
+.article-header.featured-image-wrapper img {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px; /* optional: adds a rounded corner look */
+}
+
+/* Optional: center the caption too */
+.article-header-caption {
+  text-align: center;
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Ensure emoji-capable fallback so flags render cross-platform */
+body, .prose, .text-base {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+               "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji",
+               sans-serif;
+}
+

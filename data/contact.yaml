@@ -1,0 +1,32 @@
+tag: "Contact"
+
+heading: "Take the First Step"
+
+description: >
+  Reaching out is often the hardest part.
+  If you're ready to begin, I'd be happy
+  to hear from you.
+
+items:
+
+  - icon: "map-pin"
+    title: "Sessions"
+    value: "Online, for clients in India and the UAE"
+
+  - icon: "mail"
+    title: "Email"
+    value: "hello@example.com"
+    link: "mailto:hello@example.com"
+
+  - icon: "phone"
+    title: "Phone"
+    value: "+43 123 456 789"
+    link: "tel:+43123456789"
+
+  - icon: "clock"
+    title: "Availability"
+    value: "Monday–Friday • 9:00–18:00"
+
+button:
+  text: "Book an Online Session"
+  link: "mailto:hello@example.com"

@@ -1,0 +1,199 @@
+site:
+  name: "Gopika Govindan"
+  title: "Clinical Psychologist"
+  description: >
+    Online, evidence-based psychological care for clients in India
+    and the UAE.
+
+  author: "Gopika Govindan"
+
+# Where and how she may practise. Used in the header, hero, footer notice,
+# FAQ, Impressum and CV so the legal wording stays consistent everywhere.
+practice:
+
+  title_short: "Clinical Psychologist · DHA, UAE"
+
+  regions: "India and the UAE"
+
+  licences:
+
+    - name: "Dubai Health Authority (DHA), United Arab Emirates"
+      country: "United Arab Emirates"
+      number: ""   # TODO: add DHA licence number
+
+    # Shown only once a registration number is filled in. Do not publish
+    # India as a client region without a valid RCI registration.
+    - name: "Rehabilitation Council of India (RCI)"
+      country: "India"
+      number: ""   # TODO: add RCI Central Rehabilitation Register (CRR) number
+      require_number: true
+
+  notice: >
+    Sessions are offered online only, to clients who are located in India
+    or the UAE at the time of the session. Gopika Govindan is not registered
+    as a Klinische Psychologin or Psychotherapeutin in Austria and does not
+    provide psychological treatment to clients located in Austria or
+    anywhere outside India and the UAE.
+
+# Legal notice (Impressum) required for websites run from Austria
+# (§ 5 E-Commerce-Gesetz, § 25 Mediengesetz). Have it checked before launch.
+impressum:
+
+  owner: "Gopika Govindan"
+
+  address: ""   # TODO: postal address in Vienna (required, a P.O. box is not enough)
+
+  profession: "Clinical Psychologist"
+
+  regulations_link: "https://www.dha.gov.ae"
+
+  purpose: >
+    Information about the online psychological services offered by
+    Gopika Govindan to clients in India and the UAE.
+
+hero:
+  # Button links only; the hero text comes from data/hero.yaml
+
+  primary_button:
+    link: "#contact"
+
+  secondary_button:
+    link: "#about"
+
+about:
+
+  tag: "About"
+
+  heading: "Who am I?"
+
+  # Source: LinkedIn profile (About, Experience, Education), October 2026
+
+  description: >
+    I am a Clinical Psychologist licensed by the Dubai Health Authority,
+    offering online therapy to clients in India and the UAE. I live in
+    Vienna and have experience across neurology, psychiatry and
+    organisational mental health.
+
+  bio:
+
+    - >
+      Born in India and raised in Abu Dhabi, my professional training
+      and practice span India, the UK, Greece, the UAE and the USA. This
+      international background allows me to work effectively with
+      diverse populations and multinational teams.
+
+    - >
+      Alongside clinical practice, I have worked with corporate and
+      organisational clients, supporting employee mental health,
+      leadership development, resilience and psychological wellbeing
+      in the workplace. In both individual and organisational work,
+      my approach is evidence-based and culturally sensitive.
+
+  stats:
+
+    - value: "2011"
+      label: "Qualified in Clinical Psychology"
+      icon: "brain"
+
+    - value: "5"
+      label: "Countries of Practice"
+      icon: "map-pin"
+
+    - value: "MPhil"
+      label: "Clinical Psychology"
+      icon: "user"
+
+  qualifications:
+
+    title: "Qualifications"
+
+    items:
+
+      - name: "MPhil Clinical Psychology (PsyD equivalent)"
+        detail: "Kasturba Medical College, Manipal · Nostrified in Austria"
+
+      - name: "MSc Clinical Psychology, Merit"
+        detail: "Swansea University, UK · Nostrified in Austria"
+
+      - name: "Postgraduate Certificate in Psychological Counselling"
+        detail: "Christian Counselling Centre"
+
+      - name: "Certification in Dance Movement Therapy"
+        detail: "Association of Dance Movement Psychotherapy, UK"
+
+      - name: "Advanced Diploma in Neuro-Linguistic Programming"
+        detail: "NLP Coaching Academy · American Board certified NLP Practitioner"
+
+      - name: "Cognitive Trainer, Neuroscience"
+        detail: "BrainRx, USA"
+
+      - name: "Chartered Psychologist Membership (2011–2017)"
+        detail: "British Psychological Society"
+
+  experience:
+
+    title: "Experience"
+
+    # Shown on the website
+    summary: >
+      My experience spans clinical, rehabilitation and workplace settings:
+      as Clinical Director of a paediatric rehabilitation centre in the UAE,
+      in private practice with clients in the USA and the MENA region, as an
+      occupational health advisor at OMV in Vienna, and now in clinical
+      operations at SOZO Brain Center, Vienna.
+
+    cv:
+      text: "Download CV (PDF)"
+      file: "cv/Gopika-Govindan-CV.pdf"
+
+    # Used in the CV (/cv/ page and PDF)
+    items:
+
+      - role: "Clinical Operations Specialist"
+        place: "SOZO Brain Center, Vienna"
+        years: "2026 – present"
+
+      - role: "Clinical Psychologist"
+        place: "Wellbees (remote)"
+        years: "2026"
+
+      - role: "Psychotherapist in Private Practice"
+        place: "USA and MENA region"
+        years: "2022 – 2026"
+
+      - role: "Advisor, Occupational Safety & Health (HSSE)"
+        place: "OMV, Vienna"
+        years: "2024 – 2025"
+        detail: "NEBOSH trained. Developed and implemented a group-wide health, safety, security and environment (HSSE) culture assessment tool."
+
+      - role: "Consultant Clinical Psychologist"
+        place: "LifeWorks Counselling & Mental Health Centre"
+        years: "2023 – 2024"
+        detail: "Overseas consultant for a premium mental health clinic in the region."
+
+      - role: "Clinical Director"
+        place: "Hayat Health and Ghobash Group, UAE"
+        years: "2021 – 2023"
+        detail: "Clinical Director and Clinical Psychologist at a paediatric rehabilitation centre. Responsible for clinical governance, health policy implementation, overall clinical operations and team recruitment. Led the centre to CAARF accreditation."
+
+      - role: "Volunteer Clinical Psychologist"
+        place: "Healing Minds Project, Dubai Health Authority COVID-19 mental health task force"
+        years: "2020 – 2022"
+        detail: "Provided Psychological First Aid to COVID-19 positive individuals, their families and others psychologically affected by the pandemic."
+
+  # Used only in the CV
+  training:
+
+    - name: "NEBOSH, Occupational Safety and Health"
+      years: "2024 – present"
+
+    - name: "TOP SET, Incident Investigation Assessment"
+      years: "2024"
+
+contact:
+
+  email: "hello@example.com"
+
+  phone: "+43 123 456789"
+
+  location: "Vienna, Austria"

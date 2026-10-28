@@ -1,0 +1,64 @@
+{{ define "main" }}
+
+{{ $imp := site.Data.site.impressum }}
+{{ $practice := site.Data.site.practice }}
+
+<section class="legal-page">
+
+    <div class="container">
+
+        <h1>Impressum</h1>
+
+        <p class="legal-lead">
+            Information according to § 5 E-Commerce-Gesetz
+            and disclosure according to § 25 Mediengesetz.
+        </p>
+
+        <div class="legal-card">
+
+            <h2>Media owner and service provider</h2>
+
+            <p>
+                {{ $imp.owner }}<br>
+                {{ with $imp.address }}{{ . }}<br>{{ end }}
+                {{ range where site.Data.contact.items "icon" "mail" }}
+                Email: <a href="{{ .link }}">{{ .value }}</a>
+                {{ end }}
+            </p>
+
+            <h2>Profession</h2>
+
+            <p>{{ $imp.profession }}</p>
+
+            {{ range $practice.licences }}
+            {{ if or (not .require_number) .number }}
+            <p>
+                Title awarded in: {{ .country }}<br>
+                Licensing and supervisory authority: {{ .name }}
+                {{ with .number }}<br>Licence no.: {{ . }}{{ end }}
+            </p>
+            {{ end }}
+            {{ end }}
+
+            <p>
+                Professional regulations:
+                <a href="{{ $imp.regulations_link }}"
+                   target="_blank"
+                   rel="noopener">{{ $imp.regulations_link }}</a>
+            </p>
+
+            <h2>Scope of practice</h2>
+
+            <p>{{ $practice.notice }}</p>
+
+            <h2>Purpose of this website</h2>
+
+            <p>{{ $imp.purpose }}</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{{ end }}

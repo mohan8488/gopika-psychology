@@ -1,0 +1,23 @@
+badge: "Online Clinical Psychologist · India & UAE"
+
+heading: "Helping You Navigate Life With Confidence"
+
+description: >
+  Compassionate, evidence-based online therapy for clients
+  in India and the UAE. Together we'll work toward improved
+  mental well-being and lasting change.
+
+image: "images/profile.webp"
+
+primary_button:
+  text: "Book an Online Session"
+  link: "#contact"
+
+secondary_button:
+  text: "Learn More"
+  link: "#about"
+
+features:
+  - "Online sessions only"
+  - "Clients in India & the UAE"
+  - "Licensed by the Dubai Health Authority"

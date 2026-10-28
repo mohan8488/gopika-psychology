@@ -1,0 +1,258 @@
+{{/*
+    Print-ready CV, built from data/site.yaml.
+
+    To regenerate the PDF after editing the data, with `hugo server` running
+    on port 1314, run in PowerShell from the project folder:
+
+    & "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --no-pdf-header-footer --user-data-dir="$env:TEMP\cv-pdf" --virtual-time-budget=5000 --print-to-pdf="$PWD\static\cv\Gopika-Govindan-CV.pdf" http://localhost:1314/cv/
+*/}}
+{{ $site := site.Data.site.site }}
+{{ $about := site.Data.site.about }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <meta name="robots"
+          content="noindex">
+
+    <title>{{ $site.author }} | Curriculum Vitae</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        @page {
+            size: A4;
+            margin: 16mm 16mm 18mm;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            font-size: 10pt;
+            line-height: 1.5;
+            color: #2D2D2D;
+            background: #fff;
+        }
+
+        .cv {
+            max-width: 780px;
+            margin: auto;
+            padding: 24px;
+        }
+
+        @media print {
+            .cv {
+                max-width: none;
+                padding: 0;
+            }
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 16px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid #5E8B7E;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 22pt;
+            line-height: 1.1;
+            color: #2F4858;
+        }
+
+        .role {
+            margin-top: 4px;
+            font-size: 11pt;
+            font-weight: 600;
+            color: #5E8B7E;
+        }
+
+        .licence {
+            margin-top: 2px;
+            font-size: 9pt;
+            color: #6B7280;
+        }
+
+        .contact {
+            text-align: right;
+            font-size: 9pt;
+            color: #6B7280;
+        }
+
+        .contact a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        h2 {
+            margin: 20px 0 8px;
+            font-size: 10pt;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: #5E8B7E;
+            break-after: avoid;
+        }
+
+        p {
+            margin: 0 0 6px;
+        }
+
+        .entry {
+            display: grid;
+            grid-template-columns: 92px 1fr;
+            gap: 12px;
+            padding: 6px 0;
+            break-inside: avoid;
+        }
+
+        .entry + .entry {
+            border-top: 1px solid #D8E8E3;
+        }
+
+        .years {
+            font-size: 9pt;
+            font-weight: 600;
+            color: #5E8B7E;
+            padding-top: 1px;
+        }
+
+        .entry strong {
+            display: block;
+            color: #2F4858;
+        }
+
+        .place {
+            color: #6B7280;
+        }
+
+        .detail {
+            margin-top: 2px;
+        }
+
+        .compact .entry {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main class="cv">
+
+        <header>
+
+            <div>
+                <h1>{{ $site.author }}</h1>
+                <div class="role">Clinical Psychologist</div>
+                {{ range site.Data.site.practice.licences }}
+                {{ if or (not .require_number) .number }}
+                <div class="licence">
+                    Licensed by the {{ .name }}{{ with .number }} · No. {{ . }}{{ end }}
+                </div>
+                {{ end }}
+                {{ end }}
+            </div>
+
+            <div class="contact">
+                <div>Based in Vienna, Austria</div>
+                <div>Online practice for {{ site.Data.site.practice.regions }}</div>
+                <div>
+                    <a href="https://www.linkedin.com/in/gopika-govindan-24814921/">
+                        linkedin.com/in/gopika-govindan-24814921
+                    </a>
+                </div>
+            </div>
+
+        </header>
+
+        <section>
+
+            <h2>Profile</h2>
+
+            <p>{{ $about.description }}</p>
+
+            {{ range $about.bio }}
+            <p>{{ . }}</p>
+            {{ end }}
+
+        </section>
+
+        <section>
+
+            <h2>Experience</h2>
+
+            {{ range $about.experience.items }}
+            <div class="entry">
+                <div class="years">{{ .years }}</div>
+                <div>
+                    <strong>{{ .role }}</strong>
+                    <span class="place">{{ .place }}</span>
+                    {{ with .detail }}<p class="detail">{{ . }}</p>{{ end }}
+                </div>
+            </div>
+            {{ end }}
+
+        </section>
+
+        <section class="compact">
+
+            <h2>Education &amp; Qualifications</h2>
+
+            {{ range $about.qualifications.items }}
+            <div class="entry">
+                <div>
+                    <strong>{{ .name }}</strong>
+                    <span class="place">{{ .detail }}</span>
+                </div>
+            </div>
+            {{ end }}
+
+        </section>
+
+        {{ with $about.training }}
+
+        <section>
+
+            <h2>Further Training</h2>
+
+            {{ range . }}
+            <div class="entry">
+                <div class="years">{{ .years }}</div>
+                <div><strong>{{ .name }}</strong></div>
+            </div>
+            {{ end }}
+
+        </section>
+
+        {{ end }}
+
+    </main>
+
+</body>
+
+</html>

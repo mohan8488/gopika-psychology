@@ -1,0 +1,14 @@
+baseURL = "https://mohan8488.github.io/gopika-psychology/"
+languageCode = "en-us"
+title = "Gopika Govindan | Online Clinical Psychologist for India & the UAE"
+
+disableKinds = ["taxonomy", "term", "RSS"]
+
+enableRobotsTXT = true
+
+[params]
+
+  # Preview mode: hides the site from search engines and shows a
+  # "Preview" banner. Set to false at launch.
+  demo = true
+

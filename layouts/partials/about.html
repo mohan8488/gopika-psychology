@@ -1,0 +1,114 @@
+<section id="about">
+
+    {{ $about := site.Data.site.about }}
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                {{ $about.tag }}
+            </span>
+
+            <h2>
+                {{ $about.heading }}
+            </h2>
+
+            <p>
+                {{ $about.description }}
+            </p>
+
+        </div>
+
+        {{ with $about.bio }}
+
+        <div class="about-bio">
+
+            {{ range . }}
+            <p>{{ . }}</p>
+            {{ end }}
+
+        </div>
+
+        {{ end }}
+
+        <div class="stats-grid">
+
+            {{ range $about.stats }}
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    {{ partial (printf "icons/%s.html" .icon) . }}
+
+                </div>
+
+                <h3>{{ .value }}</h3>
+
+                <p>{{ .label }}</p>
+
+            </div>
+
+            {{ end }}
+
+        </div>
+
+        <div class="about-details">
+
+            {{ with $about.experience }}
+
+            <div class="about-card about-experience">
+
+                <h3>{{ .title }}</h3>
+
+                <p>{{ .summary }}</p>
+
+                {{ with .cv }}
+                <a href="{{ .file | relURL }}"
+                   class="btn btn-secondary cv-link"
+                   target="_blank"
+                   rel="noopener">
+                    {{ .text }}
+                </a>
+                {{ end }}
+
+            </div>
+
+            {{ end }}
+
+            {{ with $about.qualifications }}
+
+            <details class="about-card">
+
+                <summary><h3>{{ .title }}</h3></summary>
+
+                <ul class="credential-list">
+
+                    {{ range .items }}
+                    <li>
+                        <strong>{{ .name }}</strong>
+                        <span>{{ .detail }}</span>
+                    </li>
+                    {{ end }}
+
+                </ul>
+
+            </details>
+
+            {{ end }}
+
+        </div>
+
+    </div>
+
+    <script>
+        // Expanded on larger screens; collapsed on phones to keep the page short
+        if (window.matchMedia("(min-width: 601px)").matches) {
+            document.querySelectorAll("details.about-card").forEach(function (d) {
+                d.open = true;
+            });
+        }
+    </script>
+
+</section>

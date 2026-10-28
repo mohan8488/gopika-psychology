@@ -1,0 +1,64 @@
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                {{ site.Data.contact.tag }}
+            </span>
+
+            <h2>
+                {{ site.Data.contact.heading }}
+            </h2>
+
+            <p>
+                {{ site.Data.contact.description }}
+            </p>
+
+        </div>
+
+        <div class="contact-card">
+
+            {{ range site.Data.contact.items }}
+
+            <div class="contact-item">
+
+                <span class="contact-icon">
+
+                    {{ partial (printf "icons/%s.html" .icon) . }}
+
+                </span>
+
+                <div>
+
+                    <strong>{{ .title }}</strong>
+
+                    {{ if .link }}
+                    <p><a href="{{ .link | safeURL }}">{{ .value }}</a></p>
+                    {{ else }}
+                    <p>{{ .value }}</p>
+                    {{ end }}
+
+                </div>
+
+            </div>
+
+            {{ end }}
+
+            <div class="contact-cta">
+
+                <a href="{{ site.Data.contact.button.link }}"
+                   class="btn btn-primary">
+
+                    {{ site.Data.contact.button.text }}
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

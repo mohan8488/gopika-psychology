@@ -1,0 +1,53 @@
+<div class="mobile-cta" aria-hidden="true">
+
+    <a href="{{ site.Data.contact.button.link }}"
+       class="btn btn-primary"
+       tabindex="-1">
+        {{ site.Data.contact.button.text }}
+    </a>
+
+    {{ range where site.Data.contact.items "icon" "phone" }}
+    {{ with .link }}
+    <a href="{{ . | safeURL }}"
+       class="mobile-cta-call"
+       aria-label="Call"
+       tabindex="-1">
+        {{ partial "icons/phone.html" . }}
+    </a>
+    {{ end }}
+    {{ end }}
+
+</div>
+
+<script>
+    (function () {
+        var bar = document.querySelector(".mobile-cta");
+        var heroButtons = document.querySelector(".hero-buttons");
+        var contact = document.getElementById("contact");
+        if (!bar || !heroButtons || !("IntersectionObserver" in window)) return;
+
+        var heroVisible = true;
+        var contactVisible = false;
+
+        function update() {
+            var show = !heroVisible && !contactVisible;
+            bar.classList.toggle("visible", show);
+            bar.setAttribute("aria-hidden", !show);
+            bar.querySelectorAll("a").forEach(function (a) {
+                a.tabIndex = show ? 0 : -1;
+            });
+        }
+
+        new IntersectionObserver(function (entries) {
+            heroVisible = entries[0].isIntersecting;
+            update();
+        }).observe(heroButtons);
+
+        if (contact) {
+            new IntersectionObserver(function (entries) {
+                contactVisible = entries[0].isIntersecting;
+                update();
+            }).observe(contact);
+        }
+    })();
+</script>

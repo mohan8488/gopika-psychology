@@ -1,0 +1,15 @@
+{{/*
+    Lists the licences from data/site.yaml (practice.licences).
+    Entries with require_number are skipped until a number is filled in.
+*/}}
+<ul class="licence-list">
+
+    {{ range site.Data.site.practice.licences }}
+    {{ if or (not .require_number) .number }}
+    <li>
+        Licensed by the {{ .name }}{{ with .number }}, licence no. {{ . }}{{ end }}
+    </li>
+    {{ end }}
+    {{ end }}
+
+</ul>
